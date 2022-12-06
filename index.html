@@ -43,41 +43,54 @@
     <script>
         //Exercise 1 - create an array of your 6 favorite things
         
-
+        let food = ['ramen', 'chips', 'rice', 'cookies', 'chocolate', 'candy'];
+        
         //Exercise 2 - show your most favorite thing on the page
         let myFavorite = document.getElementById('my-favorite');//selects the tag
-        myFavorite.innerHTML;//adds content inside the tag
+        //myFavorite.innerHTML = food [5];//adds content inside the tag
 
         //Exercise 3 - change your favorite thing and show it on the page
         
-        myFavorite.innerHTML;
+        myFavorite.innerHTML = `<li>${food[5]}</li>`;
 
         //Exercise 4 - Use the length property to show the number of items in your array
         let total = document.getElementById('total');
-        
-        total.innerHTML;
+        let amount = food.length;
+        total.innerHTML = amount; 
 
         //Exercise 5 - iterate through the array and show it on the page using the forEach() method.
         let myList = document.getElementById('all-favorites');
-        
+        food.forEach(function(item) {
+            myList.innerHTML += `<li>${item}</li>` ;
+          } )
 
-        myList.innerHTML;
 
         //Exercise 6 Concatenation of arrays
         let more = document.getElementById('more-favorites');
+        let animals = ['dog', 'cat', 'rabbit'];
+        let both = food.concat(animals);
+        both.forEach(function(item) {
+            more.innerHTML += `<li>${item}</li>` ;
+          } )
 
         more.innerHTML;
 
         //Exercise 7 push a new item to your array
         let pushed = document.getElementById('favorites-plus-one');
-
-        pushed.innerHTML;
+        let foot = food.push("socks");
+        pushed.innerHTML = foot;
+        food.forEach(function(item) {
+            pushed.innerHTML += `<li>${item}</li>` ;
+          } )
 
        //Exercise 8 push a new item to your array
        
         let popped = document.getElementById('favorites-minus-one');
         popped.innerHTML;
-
+        food.pop ();
+        food.forEach(function(item) {
+            popped.innerHTML += `<li>${item}</li>` ;
+          } )
         //Exercises 9-12, practice slice(), shift(), unshift() in arrays.js
     </script>
 
